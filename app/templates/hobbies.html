@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% block head %}
+        <title>Ivanna's Hobbies & More</title>
+        <link type="text/css" href="{{url_for('static', filename='../static/styles/index.css')}}" rel='stylesheet' />
+        <link href="{{url_for('static', filename='../static/styles/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    {% endblock %}
+{% block content %}
+
+<div class="profile-page">
+  <div class="wrapper">
+    <div class="page-header page-header-small" filter-color=#FFFFFF>
+      <div class="page-header-image" data-parallax="true" style="background-image: url('static/img/tech-bg.jpeg')"></div>
+      <div class="container">
+        <div class="content-center">
+          <div class="cc-profile-image"><a href="#"><img src="static/img/me.jpeg" alt="Image"/></a></div>
+          <div class="h2 title">Ivanna Gomez Quiroz</div>
+          
+        </div>
+      </div>
+      <div class="section">
+        <div class="container">
+          <div class="button-container"><a class="btn btn-default btn-round btn-lg btn-icon" href="#" rel="tooltip" title="Follow me on LinkedIn"><i class="fa fa-linkedin"></i></a><a class="btn btn-default btn-round btn-lg btn-icon" href="#" rel="tooltip" title="Follow me on Twitter"><i class="fa fa-twitter"></i></a><a class="btn btn-default btn-round btn-lg btn-icon" href="#" rel="tooltip" title="Follow me on Google+"><i class="fa fa-google-plus"></i></a><a class="btn btn-default btn-round btn-lg btn-icon" href="#" rel="tooltip" title="Follow me on Instagram"><i class="fa fa-instagram"></i></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section" id="hobbies">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 ml-auto mr-auto">
+        <div class="h4 text-center mb-4 title">Ivanna's Hobbies</div>
+
+      </div>
+    </div>
+    <div class="tab-content gallery mt-5">
+      <div class="tab-pane active" id="web-development">
+        <div class="ml-auto mr-auto">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a>
+                  <figure class="cc-effect"><img src="static/img/doggo.jpg" alt="Image"/>
+                    <figcaption>
+                      <div class="h4">I very much just hang with my doggo</div>
+                      <p>Doggo!</p>
+                    </figcaption>
+                  </figure></a></div>
+            </div>
+            <div class="col-md-6">
+              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a>
+                  <figure class="cc-effect"><img src="static/img/art.jpg" alt="Image"/>
+                    <figcaption>
+                      <div class="h4">I love drawing, painting, or anything artsy!</div>
+                      <p>Art</p>
+                    </figcaption>
+                  </figure></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="maps">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 ml-auto mr-auto">
+        <div class="h4 text-center mb-4 title">Ivanna's Homes</div>
+
+      </div>
+    </div>
+    <div class="tab-content gallery mt-5">
+      <div class="tab-pane active" id="web-development">
+        <div class="ml-auto mr-auto">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a>
+                  <figure class="cc-effect"><img src="static/img/cancun.png" alt="Image"/>
+                    <figcaption>
+                      <div class="h4">Cancun</div>
+                      <p>Mexico</p>
+                    </figcaption>
+                  </figure></a></div>
+            </div>
+            <div class="col-md-6">
+              <div class="cc-porfolio-image img-raised" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a>
+                  <figure class="cc-effect"><img src="static/img/atl.png" alt="Image"/>
+                    <figcaption>
+                      <div class="h4">Atlanta</div>
+                      <p>USA</p>
+                    </figcaption>
+                  </figure></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+    </div>
+    <footer class="footer">
+      <div class="container text-center"><a class="cc-facebook btn btn-link" href="#"><i class="fa fa-linkedin fa-2x " aria-hidden="true"></i></a><a class="cc-twitter btn btn-link " href="#"><i class="fa fa-twitter fa-2x " aria-hidden="true"></i></a><a class="cc-google-plus btn btn-link" href="#"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a><a class="cc-instagram btn btn-link" href="#"><i class="fa fa-instagram fa-2x " aria-hidden="true"></i></a></div>
+      <div class="h4 title text-center">Ivanna Gomez Quiroz</div>
+      
+    </footer>
+
+</html>
+
+{% endblock %}
