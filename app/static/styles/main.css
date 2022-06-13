@@ -1260,7 +1260,7 @@
   .show > .btn-primary.dropdown-toggle,
   .show > .btn-primary.dropdown-toggle:focus,
   .show > .btn-primary.dropdown-toggle:hover {
-    background-color: #b45555;
+    background-color: #CA4F48;
     color: #FFFFFF;
     box-shadow: none; }
   .btn-primary:hover {
@@ -3824,7 +3824,7 @@ Created using IcoMoon - icomoon.io
       max-width: 880px; }
   .page-header .category,
   .page-header .description {
-    color: rgba(255, 255, 255, 0.5); }
+    color: rgba(255, 255, 255, 0.0); }
   .page-header.page-header-small {
     height: 60vh;
     max-height: 440px; }
@@ -3838,14 +3838,14 @@ Created using IcoMoon - icomoon.io
     top: 0;
     content: ""; }
   .page-header:before {
-    background-color: rgba(0, 0, 0, 0.5); }
+    background-color: rgba(0, 0, 0, 0.0); }
   .page-header[filter-color="orange"] {
-    background: rgba(44, 44, 44, 0.2);
+    background: rgba(44, 44, 44, 0.0);
     /* For browsers that do not support gradients */
     /* For Safari 5.1 to 6.0 */
     /* For Opera 11.1 to 12.0 */
     /* For Firefox 3.6 to 15 */
-    background: linear-gradient(0deg, rgba(44, 44, 44, 0.2), rgba(224, 23, 3, 0.6));
+    background: linear-gradient(0deg, rgba(44, 44, 44, 0.0), rgba(224, 23, 3, 0.0));
     /* Standard syntax */ }
   .page-header .container {
     z-index: 2; }
@@ -5120,12 +5120,14 @@ Created using IcoMoon - icomoon.io
 /* Body */
 /* Profile Page Background Style */
 .page-header {
-  background: rgba(44, 44, 44, 0.2);
+  background: white;
+	/*background: linear-gradient(to bottom, #1111 0%, #b266ff 0%);
+  /*background: rgba(0, 0, 0, 0.0);
   /* For browsers that do not support gradients */
   /* For Safari 5.1 to 6.0 */
   /* For Opera 11.1 to 12.0 */
   /* For Firefox 3.6 to 15 */
-  background: linear-gradient(0deg, rgba(178, 102, 255, 0.2), rgba(255, 255, 255, 0.6));
+  background: linear-gradient(to top, rgba(202, 79, 72, 0.0), rgba(255, 255, 255, 0.6));
   /* Standard syntax */ }
   .page-header .btn {
     width: 140px; }
@@ -5286,3 +5288,53 @@ a.credit {
 /* Common Style */
 .section {
   padding-bottom: 0; }
+
+
+
+
+
+@keyframes move {
+      0%{
+        background-position: 0 50%;
+      }
+      50%{
+        background-position: 100% 50%;
+      }
+      100%{
+        background-position: 0 50%;
+      }
+    }
+		
+		.filter-eff {
+		  width: 100%;
+		  height: 100%;
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  background:  #CA4F48;
+		  animation: colorChange 9s ease-in-out infinite;
+		  animation-fill-mode: both;
+		  mix-blend-mode: overlay;
+		}
+		
+		@keyframes colorChange {
+		  0%,
+		  100% {
+		    opacity: 0.7;
+		  }
+		  50% {
+		    opacity: .9;
+		  }
+		}
+		
+		.landscape-eff {
+		  position: absolute;
+		  bottom: 0px;
+		  left: 0;
+		  width: 100%;
+		  height: 100%;
+		  
+		  background-size: 1000px 250px;
+		  background-repeat: repeat-x;
+		  background-position: center bottom;
+		}
