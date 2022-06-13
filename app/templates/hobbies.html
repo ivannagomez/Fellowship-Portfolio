@@ -11,7 +11,11 @@
 <div class="profile-page">
   <div class="wrapper">
     <div class="page-header page-header-small" filter-color=#FFFFFF>
-      <div class="page-header-image" data-parallax="true" style="background-image: url('static/img/tech-bg.jpeg')"></div>
+      <div class="page-header-image" data-parallax="true">
+        <div class="landscape-eff"></div>
+        <div class="filter-eff"></div>
+        <canvas id="canvas"></canvas>
+      </div>
       <div class="container">
         <div class="content-center">
           <div class="cc-profile-image"><a href="#"><img src="static/img/me.jpeg" alt="Image"/></a></div>
@@ -109,6 +113,11 @@
       <div class="h4 title text-center">Ivanna Gomez Quiroz</div>
       
     </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.2/dat.gui.js"></script>     
+      
+    <script src="app/static/scripts/script.js?ver=1.1.0"></script>
 
 </html>
 
