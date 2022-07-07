@@ -4,11 +4,12 @@ from dotenv import load_dotenv
 import json
 from peewee import *
 from datetime import datetime
+from playhouse.shortcuts import model_to_dict
 
 load_dotenv()
 app = Flask(__name__)
 
-# connect to MySQL database
+# MySQL database connection
 mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
                      user=os.getenv("MYSQL_USER"),
                      password=os.getenv("MYSQL_PASSWORD"),
@@ -16,6 +17,20 @@ mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
 
 print(mydb)
 
+#Timeline posts
+class TimelinePost(Model):
+    name = CharField()
+    email = CharField()
+    content = TextField()
+    created_at = DateTimeField(default=datetime.now)
+
+    class Meta:
+        database = mydb
+
+mydb.connect()
+mydb.create_tables([TimelinePost])
+
+#Landing page routing
 @app.route("/")
 def index():
     return render_template("index.html", title="Ivannas Portfolio", url=os.getenv("URL"))
