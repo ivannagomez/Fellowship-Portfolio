@@ -33,7 +33,7 @@ def hobbies():
     return render_template("hobbies.html")
   
 @app.route("/timeline")
-def hobbies():
+def timeline():
     return render_template("timeline.html")
   
 
