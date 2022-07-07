@@ -22,17 +22,7 @@ mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
 print(mydb)
 
 
-class TimelinePost(Model):
-    name = CharField()
-    email = CharField()
-    content = TextField()
-    created_at = DateTimeField(default=datetime.now)
 
-    class Meta:
-        database = mydb
-
-mydb.connect()
-mydb.create_tables([TimelinePost])
 
 #Landing page routing
 @app.route("/")
