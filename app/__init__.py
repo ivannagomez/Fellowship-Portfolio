@@ -14,14 +14,14 @@ load_dotenv()
 app = Flask(__name__)
 
 # MySQL database connection
-db = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
+mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
                      user=os.getenv("MYSQL_USER"),
                      password=os.getenv("MYSQL_PASSWORD"),
                      port=3306)
 
-print(db)
+print(mydb)
 
-# Timeline
+
 class TimelinePost(Model):
     name = CharField()
     email = CharField()
@@ -29,10 +29,10 @@ class TimelinePost(Model):
     created_at = DateTimeField(default=datetime.now)
 
     class Meta:
-        database = db
+        database = mydb
 
-db.connect()
-db.create_tables([TimelinePost])
+mydb.connect()
+mydb.create_tables([TimelinePost])
 
 #Landing page routing
 @app.route("/")
