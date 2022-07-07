@@ -25,10 +25,10 @@ class TimelinePost(Model):
     created_at = DateTimeField(default=datetime.now)
 
     class Meta:
-        database = mydb
+        database = db
 
-mydb.connect()
-mydb.create_tables([TimelinePost])
+db.connect()
+db.create_tables([TimelinePost])
 
 #Landing page routing
 @app.route("/")
@@ -48,7 +48,7 @@ def timeline():
     return render_template("timeline.html")
   
 @app.route('/api/timeline_post', methods=['POST'])
-def post_time_line_post():
+def post_timeline_post():
     name = request.form['name']
     email = request.form['email']
     content = request.form['content']
@@ -57,7 +57,7 @@ def post_time_line_post():
     return model_to_dict(timeline_post)
 
 @app.route('/api/timeline_post', methods=['GET'])
-def get_time_line_post(): 
+def get_timeline_post(): 
     return{
         'timeline_posts': [
             model_to_dict(p)
