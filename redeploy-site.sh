@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ~/project-22-sum-21-regina-ivanna-gomez
+cd root/project-22-sum-21-regina-ivanna-gomez
 git fetch
 git reset origin/main --hard
 
