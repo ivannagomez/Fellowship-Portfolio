@@ -2,7 +2,7 @@
 
 tmux kill-server
 
-cd root/project-22-sum-21-regina-ivanna-gomez
+cd ~/project-22-sum-21-regina-ivanna-gomez
 git fetch
 git reset origin/main --hard
 
