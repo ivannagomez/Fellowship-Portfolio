@@ -1,7 +1,7 @@
 version: "3"
 services:
   pythonic_portfolio:
-    container_name: Fellowship-Portfolio
+    container_name: myportfolio
     build: .
     restart: always
     env_file:
@@ -11,7 +11,7 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - .:/Fellowship-Portfolio
+      - .:/myportfolio
     depends_on:
       - mysql
 
