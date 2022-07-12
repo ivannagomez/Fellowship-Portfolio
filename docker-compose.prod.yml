@@ -20,7 +20,7 @@ services:
     volumes:
       - mydatabase:/var/lib/mysql
       
-nginx:
+  nginx:
     container_name: nginx
     image: jonasal/nginx-certbot
     restart: always
