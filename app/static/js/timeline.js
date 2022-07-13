@@ -15,7 +15,7 @@ const getPosts = () => {
 const post2html = (post) =>{
     return `
         <h5 style="line-height:0.8">${post['name']}</h5>
-        <p style="line-height:0.9">Content: ${post['content']}</p>
+        <li style="line-height:0.6">Content: ${post['content']}</il>
         <p style="line-height:0.6">${post['email']}</p>
         <p style="line-height:0.6">${post['created_at']}</p>
         <p style="line-height:1.6"><br></p>
