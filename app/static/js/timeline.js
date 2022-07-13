@@ -15,10 +15,10 @@ const getPosts = () => {
 const post2html = (post) =>{
     return `
         <h5>Name: ${post['name']}</h5>
-        <p>Email: ${post['email']}</p>
-        <p>Content: ${post['content']}</p>
-        <p>${post['created_at']}</p>
-        <p></p><p></p>
+        <p style="line-height:0.6>Email: ${post['email']}</p>
+        <p style="line-height:0.6>Content: ${post['content']}</p>
+        <p style="line-height:0.6>${post['created_at']}</p>
+        <p style="line-height:2.0></p>
         `
 }
 
