@@ -14,11 +14,11 @@ const getPosts = () => {
 }
 const post2html = (post) =>{
     return `
-        <li>Name: ${post['name']}</il>
+        <h5>Name: ${post['name']}</h5>
         <li>Email: ${post['email']}</il>
         <li>Content: ${post['content']}</il>
-        <li>${post['created_at']}</il>
-        <li></il>
+        <p>${post['created_at']}</p>
+        <p></p>
         `
 }
 
