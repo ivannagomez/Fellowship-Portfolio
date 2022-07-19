@@ -8057,13 +8057,13 @@ a.text-dark:hover {
 
 .button {
   background-color: #4CAF50; /* Green */
+  border-radius: 5px;
   border: none;
   color: white;
-  padding: 16px 32px;
+  padding: 5px 44px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
   margin: 4px 2px;
   transition-duration: 0.4s;
   cursor: pointer;
