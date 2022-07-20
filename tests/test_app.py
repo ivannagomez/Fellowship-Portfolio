@@ -71,7 +71,7 @@ class AppTestCase(unittest.TestCase):
         html = response.get_data(as_text=True)
 
         assert '<form id="post-form">' in html
-        assert '<button class="mt-3" type="submit">Submit</button>' in html
+        assert '<button class="mt-3 button button3" type="submit">Submit</button>' in html
 
         #wish to test that post appear on the timeline.html page
         #but at this time application code does not have that functionality
