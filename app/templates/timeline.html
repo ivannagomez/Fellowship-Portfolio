@@ -39,59 +39,24 @@
 
         <!-- Main Container -->
     <div class="post-form-container mt-5">
-      <form id="post-form">
-        <label for="name">Name</label><br>
+      <form id="form">
+        <label>Name</label><br>
         <input type="text" value="Name" id="name" name="name"><br>
-        <label class="mt-3" for="email">Email</label><br>
-        <input type="text" value="example@email.com" id="email" name="email"><br>
-        <label class="mt-3" for="content">Content</label><br>
-        <textarea name="content" form="post-form">Post content</textarea><br>
-        <button class="mt-3" type="submit">Submit</button>
+        <label class="mt-3">Email</label><br>
+        <input type="email" value="example@email.com" id="email" name="email"><br>
+        <label class="mt-3">Content</label><br>
+        <input type="text" value="Post content" id="content" name="content"><br>
+        <button class="mt-4 button button3" type="submit">Submit</button>
       </form>
     </div>
       <div class="timeline mt-5">
         <div class="card">
           <div class="card-header h6">Posts</div>
-          <div class="card-body" style="--bs-gutter-x: 0; padding: 0.5rem;">
-            {% for post in posts %}
-
-            <div class="card col post" style="min-width: 16rem;">
-              <div class="card-body">
-                <h5 class="card-title">{{ post['name'] }}</h5>
-                <p class="card-text">{{ post['content'] }}</p>
-                <p class="card-text">{{ post['created_at'] }}</p>
-              </div>
-            </div>
-            
-            {% endfor %}
+          <div class="card-body mt-3" style="--bs-gutter-x: 0; padding: 2.5rem;">
+            <div id="posts"></div>
           </div>
         </div>
       </div>
-  <!-- JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
-  </script>
-  <script>
-    const form = document.getElementById('post-form');
- 
-    form.addEventListener('submit', function(e) {
-    
-      // Prevent default behavior:
-      e.preventDefault();
-
-      // Create payload as new FormData object:
-      const payload = new FormData(form);
-
-      // Post the payload using Fetch:
-      fetch('/api/timeline_post', {
-        method: 'POST',
-        body: payload,
-      })
-      .then(res => res.json())
-      .then(data => console.log(data))
-  })
-  </script>
-
       </div>
     </div>
     
@@ -111,7 +76,8 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.2/dat.gui.js"></script>     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.2/dat.gui.js"></script>
+    <script type="module" src="../static/js/timeline.js"></script>
       
     <script src="static/scripts/script.js?ver=1.1.0"></script>
 

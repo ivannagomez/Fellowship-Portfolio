@@ -21,6 +21,7 @@ else:
     mydb = MySQLDatabase(os.getenv("MYSQL_DATABASE"),
                      user=os.getenv("MYSQL_USER"),
                      password=os.getenv("MYSQL_PASSWORD"),
+                     host=os.getenv("MYSQL_HOST"),
                      port=3306)
 
 print(mydb)
@@ -82,7 +83,16 @@ def get_timeline_post():
             for p in TimelinePost.select().order_by(TimelinePost.created_at.desc())
             ]
         }
-
+  
+@app.route('/api/timeline_post', methods=['DELETE'])
+def delete_time_line_post(): 
+    select = TimelinePost.select(fn.MAX(TimelinePost.created_at)).scalar() 
+    row_to_del = TimelinePost.get(TimelinePost.created_at == select)
+    row_to_del.delete_instance()
+    return{
+        'deleted': 
+            model_to_dict(row_to_del)
+    }
 
 if __name__ == "__main__":
     app.debug = True
