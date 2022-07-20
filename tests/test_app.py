@@ -70,7 +70,7 @@ class AppTestCase(unittest.TestCase):
         assert response.status_code == 200
         html = response.get_data(as_text=True)
 
-        assert '<form id="post-form">' in html
+        assert '<form id="form">' in html
         assert '<button class="mt-4 button button3" type="submit">Submit</button>' in html
 
         #wish to test that post appear on the timeline.html page
