@@ -15,12 +15,13 @@ jobs:
         run: |
           mkdir -p ~/.ssh/
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy-key.pem
-          chmod 600 ~/.ssh/deploy-key.pem
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/authorized_keys
+          chmod 0600 ~/.ssh/authorized_keys
           cat >> ~/.ssh/config <<END
           Host my-vps
             HostName $SSH_IP
             User $SSH_USER
-            IdentityFile ~/.ssh/deploy-key.pem
+            IdentityFile ~/.ssh/authorized_keys
             StrictHostKeyChecking no
           END
         env:
