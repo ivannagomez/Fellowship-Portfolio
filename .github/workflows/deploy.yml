@@ -13,15 +13,15 @@ jobs:
     steps:
       - name: Configure SSH
         run: |
-          mkdir -p ~/.ssh/
+          mkdir -p root/.ssh/
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy-key.pem
-          echo "$SSH_PRIVATE_KEY" > ~/.ssh/authorized_keys
-          chmod 0600 ~/.ssh/authorized_keys
-          cat >> ~/.ssh/config <<END
+          echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDYwSCBITe9aV07S6/62T/n89atlCg3e2F35SYKbqfqf1THExnArySxjK1bhsxH63e1PLGytDd2onBiPTm7KhbpOXMnyNadLD393zxEPHajBNzLYcgSxMvAH77to2KB9uruzFoNeudtMDQNTi1DDzjDLuYLJq0+uVw7E4F1mvWZ2RLFRdr5Eofz2wequuGEbLRxi61hmfuPHwOK+9/+m9+B8ANSHTEMGdtCfiQoukPKn4TPU4yFfegciCwnLzmEZYZ66iSpHUMtSYk5mVzf5oGA8YAMfvgGVMLjxYCiGiouIOloWpCsb1CwVXZlqL/26nyZEWlnTjikWwUKUUL+BbQrh3ed6gm2xF7XPX1rplIbHvum//H8fghtVnzxFvwr5Io8nRSt0gX/O7xY5rM5wQmqWHVaZ3dk5lC3nO/APgRyEyVAHOuqBmkXpyaPVzq5yufICP5Fz7ZWo21KRzTDXSZ8VrrDep4+4i8gWnHtfSe1zsgZWa8NJe5pa7SPOTOY030= root@regina-ivanna-gomez" > root/.ssh/authorized_keys
+          chmod 0600 root/.ssh/authorized_keys
+          cat >> root/.ssh/config <<END
           Host my-vm
             HostName 167.172.253.54
             User root
-            IdentityFile ~/.ssh/authorized_keys
+            IdentityFile root/.ssh/authorized_keys
             StrictHostKeyChecking no
           END
         env:
@@ -30,4 +30,4 @@ jobs:
           SSH_IP: 167.172.253.54
 
       - name: Deploy site
-        run: ssh my-vm 'chmod u+x ${{ secrets.PROJECT_ROOT }}/redeploy-site.sh && ${{ secrets.PROJECT_ROOT }}/redeploy-site.sh'
+        run: ssh my-vm 'chmod u+x Fellowship-Portfolio/redeploy-site.sh && Fellowship-Portfolio/redeploy-site.sh'
